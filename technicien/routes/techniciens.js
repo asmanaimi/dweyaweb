@@ -45,17 +45,4 @@ var _ = require('lodash');
  });
  //update technicien
 
- router.put('/updatetech/:id', function (req, res, next) {
-   // fetch user
-   technicien.findById(req.params.id, function(err, post) {
-       if (err) return next(err);
-
-       _.assign(post, req.body); // update user
-       post.save(function(err) {
-           if (err) return next(err);
-           return res.json(200, post);
-       })
-   });
-});
-
 module.exports=router;

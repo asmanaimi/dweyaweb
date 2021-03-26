@@ -2,7 +2,7 @@ const express =require('express');
 const technicien = require('../../technicien/models/technicien');
 const router =express.Router();
 const pharmacien = require('../models/pharmacien');
-
+var _ = require('lodash');
 //Login
 router.post('/register' ,(req,res,next)=>{
     let newPharmacien = new pharmacien({
@@ -107,5 +107,45 @@ router.post('/register' ,(req,res,next)=>{
         })
     });
  });
-
+ router.get('/list',(req,res, next)=>{ 
+    technicien.find((error,data)=>{
+        if(error) {
+            return next(error)
+        } else {
+            res.json(data)
+        }
+        
+    })
+  });
+  router.delete('/deletetech/:id', (req, res, next)=>{
+   
+    const technicienId= req.params.id;
+    technicien.remove({ _id: technicienId }, (err) => {
+        if(err) {
+          return res.send({
+            success: false,
+            message: 'Failed to delete technicien'
+          });
+        }
+  
+        return res.send({
+          success: true,
+          message: 'technicien deleted'
+        });
+    });
+  });
+  
+ router.put('/updatetech/:id', function (req, res, next) {
+    // fetch user
+    technicien.findById(req.params.id, function(err, post) {
+        if (err) return next(err);
+ 
+        _.assign(post, req.body); // update user
+        post.save(function(err) {
+            if (err) return next(err);
+            return res.json(200, post);
+        })
+    });
+ });
+ 
 module.exports=router;
