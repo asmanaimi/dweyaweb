@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <img class="avatar mat-elevation-z8" src="assets/dweya2.png" />
+
+     <!--  <h4 class="name">le nom du pharmacien</h4>
+        <p class="designation">Software Engineer</p>
+!-->
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span routerLink="/Acceuil">Accueil</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>list</mat-icon>
+          <span   routerLink="/Listdestechniciens">List des techniciens</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>list</mat-icon>
+            <span routerLink="/Listdesordonnances">List des ordonnaces</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>power_settings_new</mat-icon>
+            <span  routerLink="/home"  >Déconnecter</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+         
+
+
+<div class="container" >
+   
+    <!-- Employee list -->
+    <table id="customers" >
+      <thead >
+        <tr>
+          <th scope="col"><h3>Numéro</h3></th>
+          <th scope="col"><h3>Nom du technicien</h3></th>
+          <th scope="col"><h3>Adresse</h3></th>
+          <th scope="col"><h3>Numéro de cin </h3></th>
+          <th scope="col"><h3>Numéro de télephone</h3></th>
+          <th scope="col"><h3>Email</h3></th>
+           <th scope="col"><h3></h3></th>
+<th scope="col"><h3></h3></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let technicien of techniciens; let i = index">
+                  <td> {{ i + 1 }} </td>
+
+          <td>{{technicien.name}}</td>
+          <td>{{technicien.adress}}</td>
+           <td>{{technicien.cin}}</td>
+            <td>{{technicien.tel}}</td>
+             <td>{{technicien.email}}</td>
+
+         <td>
+<img  class="icondelete"src="assets/delete.svg" (click)=" deletetech(technicien._id)"   ></td>
+<td><img src="https://img.icons8.com/android/24/000000/edit.png" (click)="navigateToEdit(technicien._id)" />
+          </td> 
+        </tr>
+      </tbody>
+    </table>
+        <input type="submit"  class="btn btn-primary" routerLink="/Ajouter technicien" value="Ajouter technicien">
+
+  </div>
+</div>
+        
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+
+   
+</body>
+</html> 

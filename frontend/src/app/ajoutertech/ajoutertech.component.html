@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="sidenav">
+  <a routerLink="/acceuil"  >Acceuil</a>
+  <a  routerLink="/Listdestechniciens"  >Liste des techniciens</a>
+  <a  [routerLink]="['/Listdesordonnances']" >Liste des ordonnances</a>
+  <a   [routerLink]="['/home']">Déconnecter</a>
+</div>
+
+<div class="main">
+  <form class="form-horizontal" (submit)="addtech()">
+
+    <h2>Ajouter Technicien</h2>
+  
+
+
+
+   <!-- <div class="form-group">
+        <label class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control"[(ngModel)]="name" name="name">
+        </div>
+      </div>
+      -->
+      <label for="fname">Name</label>
+    <input type="text" id="fname" name="name" placeholder="le nom du tech...." class="form-control"[(ngModel)]="name" name="name">
+<label for="lname">Email</label>
+    <input type="text" id="lname" name="email" placeholder="aaaaaa@gmail.com" class="form-control"[(ngModel)]="email" name="email">
+  <label for="lname">Numéro de Cin</label>
+    <input type="text" id="lname" name="cin" placeholder="xxxxxxxx" class="form-control"[(ngModel)]="cin" name="cin">
+     <label for="lname">Adresse</label>
+    <input type="text" id="lname" name="adress" placeholder="xx rue aaaaaa " class="form-control"[(ngModel)]="adress" name="adress">
+    <label for="lname">Tél</label>
+    <input type="text" id="lname" name="tel" placeholder="xxxxxxxx" class="form-control"[(ngModel)]="tel" name="tel">
+    <label for="lname">Password</label>
+    <input for="lname" type="password" id="lname" name="password" placeholder="xxxxxxxx" class="form-control"[(ngModel)]="password" name="password">
+   <!-- <div class="form-group">
+      <label class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="email" name="email">
+      </div>
+    </div>
+    -->
+  <!-- <div class="form-group">
+      <label class="col-lg-2 control-label">Cin</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="cin" name="cin">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Adresse</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="adress" name="adress">
+      </div>
+    </div>
+     <div class="form-group">
+      <label class="col-lg-2 control-label">Tel</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="tel" name="tel">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control"[(ngModel)]="password" name="password">
+      </div>
+    </div>
+    
+    
+    
+    
+      
+      <div class="form-group">
+        <div class="pull-right">
+          <button type="submit" >Register</button>
+        </div>
+      </div>
+      -->
+       <input type="submit" value="Submit">
+      </form>
+
+</div>
+   
+</body>
+</html> 

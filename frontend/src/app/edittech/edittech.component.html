@@ -1,0 +1,82 @@
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="sidenav">
+  <a routerLink="/acceuil"  >Acceuil</a>
+  <a  routerLink="/Listdestechniciens"  >Liste des techniciens</a>
+  <a  [routerLink]="['/Listdesordonnances']" >Liste des ordonnances</a>
+  <a   [routerLink]="['/home']">Déconnecter</a>
+</div>
+
+<div class="main">
+  <form class="form-horizontal"(submit)="update()" >
+
+       <h2 class="h1">Edit Technicien</h2>
+
+  
+
+
+
+   <div class="form-group">
+        <label class="col-lg-2 control-label">Name</label>
+        <div class="col-lg-10">
+          <input type="text" class="form-control"[(ngModel)]="name" name="name">
+        </div>
+      </div>
+      
+
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="email" name="email">
+      </div>
+    </div>
+    
+   <div class="form-group">
+      <label class="col-lg-2 control-label">Cin</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="cin" name="cin">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Adresse</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="adress" name="adress">
+      </div>
+    </div>
+     <div class="form-group">
+      <label class="col-lg-2 control-label">Tel</label>
+      <div class="col-lg-10">
+        <input type="text" class="form-control"[(ngModel)]="tel" name="tel">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-10">
+        <input type="password" class="form-control"[(ngModel)]="password" name="password">
+      </div>
+    </div>
+    
+    
+    
+    
+      
+     
+      
+      <input type="submit"  value="Modifier"  />
+
+      </form>
+
+</div>
+   
+</body>
+</html> 

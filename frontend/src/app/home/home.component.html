@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Login Form | CodingLab</title> -->
+  
+  </head>
+  <body class="body">
+    <div class="container">
+      <div class="wrapper">
+        <div class="title"><span> Dweya  </span></div>
+        <form action="#" (submit)="onLoginPharmacien()"   >
+          <div class="row">
+            <i>   <img  src="assets/email2.png" /> </i>
+            
+            <input type="text" id="email" name="email" class="form-control" placeholder="email" [(ngModel)]="email" required>
+          </div>
+          <div class="row">
+        <i>   <img  src="assets/p.png" /> </i>
+            <input type="password" id="password"  class="form-control" name="password" [(ngModel)]="password" placeholder="password"  required>
+          </div>
+          <!--  <div class="pass"><a href="#">Forgot password?</a></div>!-->
+          <div class="row button">
+            <input type="submit" value="Se connecter">
+          </div>
+     <div class="signup-link">vous n'avez pas un compte ? <a href="#"   routerLink="/register" >S'inscrire'</a></div>
+        </form>
+      </div>
+    </div>
+
+  </body>
+</html>

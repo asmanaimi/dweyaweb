@@ -1,0 +1,50 @@
+
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <img class="avatar mat-elevation-z8" src="assets/dweya2.png" />
+
+     <!--  <h4 class="name">le nom du pharmacien</h4>
+        <p class="designation">Software Engineer</p>
+!-->
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>home</mat-icon>
+            <span routerLink="/Acceuil">Accueil</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>list</mat-icon>
+          <span   routerLink="/Listdestechniciens">List des techniciens</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>list</mat-icon>
+            <span routerLink="/Listdesordonnances"  >List des ordonnaces</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>power_settings_new</mat-icon>
+            <span   (click) ="onLogOut()"  >Déconnecter</span>
+        </button>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content mat-elevation-z8">
+            Main content here!
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
