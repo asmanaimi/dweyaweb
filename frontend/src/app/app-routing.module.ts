@@ -7,6 +7,7 @@ import { ListdesordonnancesComponent } from './listdesordonnances/listdesordonna
 import { AjoutertechComponent} from './ajoutertech/ajoutertech.component';
 import { EdittechComponent} from './edittech/edittech.component';
 import { RegisterComponent } from './register/register.component';
+import { AffectordoComponent } from './affectordo/affectordo.component';
 
 import { AuthGuard } from './guards/auth.guard';
 
@@ -19,7 +20,8 @@ const routes: Routes = [
     {path:'Listdesordonnances',component:ListdesordonnancesComponent,canActivate: [AuthGuard]} ,
     {path:'Ajouter technicien',component:AjoutertechComponent,canActivate: [AuthGuard]} ,
     {path:'edittech/:id',component:EdittechComponent,canActivate: [AuthGuard]},
-    
+    {path:'affecterordo/:id',component:AffectordoComponent,canActivate: [AuthGuard]},
+
 ];
 
 @NgModule({

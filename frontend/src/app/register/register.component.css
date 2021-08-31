@@ -16,10 +16,10 @@
     background: silver;
   }
   .container{
-    width: 470px;
+    width: 650px;
 
     padding: 0px;
-    margin: 170px auto;
+    margin: 90px auto;
    
   }
   .wrapper{
@@ -69,10 +69,10 @@
     transition: all 0.3s ease;
   }
   form .row input:focus{
-    background: seashell;   box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+    background: rgb(220, 231, 229);   box-shadow: inset 0px 0px 2px 2px rgba(33, 219, 27, 0.699);
   }
   form .row input::placeholder{
-    color: #999;
+    color:  lightgrey;
   }
   .wrapper form .row i{
     position: absolute;
@@ -100,14 +100,16 @@
   }
   .wrapper form .button input{
     color: #fff;
-    font-size: 20px;
-    font-weight: 500;
+    font-size: 30px;
+    font-weight: 80px;
     padding-left: 0px;
-    background: #14c572;   border: 1px solid #16a085;
+    background: #14c572;    
+    border: 1px solid #14c572;
+   
     cursor: pointer;
   }
   form .button input:hover{
-    background: #12876f;
+    background: #14c572;
   }
   .wrapper form .signup-link{
     text-align: center;

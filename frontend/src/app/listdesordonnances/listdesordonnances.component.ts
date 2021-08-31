@@ -15,17 +15,20 @@ export class ListdesordonnancesComponent implements OnInit {
 
   ngOnInit(): void {
     const currentUser = this._pharmacienService.getCurrentUser();
-    const query = { listp : currentUser.listp};
-    console.log(JSON.stringify(query));
-    this._pharmacienService.getListOrdo(query).subscribe(
+    const query2 = { listp : currentUser.listp};
+    console.log(JSON.stringify(query2));
+    this._pharmacienService.getListOrdo(query2).subscribe(
       resp => {
         this.ordonnances = resp.ordonnances;
       }
       
     )
     console.log(JSON.stringify(this.ordonnances));
-
+    console.log(JSON.stringify(query2));
+  
   }
- 
+  navigatetoordo(id){
+    this.route.navigate(['/affecterordo/'+id])
+  }
 }
 

@@ -20,6 +20,7 @@ import { AuthGuard } from './guards/auth.guard';
 import {MatIconModule} from '@angular/material/icon';
 import {MatDividerModule} from '@angular/material/divider';
 import { RegisterComponent } from './register/register.component';
+import { AffectordoComponent } from './affectordo/affectordo.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { RegisterComponent } from './register/register.component';
     ListdesordonnancesComponent,
     AjoutertechComponent,
     EdittechComponent,
-    RegisterComponent
+    RegisterComponent,
+    AffectordoComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,11 @@ export class AjoutertechComponent implements OnInit {
     console.log(JSON.stringify(this.owner));
   
   }
+  onLogOut(){
+    this._pharmacienService.logOut();
+   // this.route.navigate(['/login']);
+    return false;
+  }
   addtech(){
     if (!this.name || !this.email || !this.password || !this.cin || !this.tel || !this.adress){
        console .log('all fields are required');

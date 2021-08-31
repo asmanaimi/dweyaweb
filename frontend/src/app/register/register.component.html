@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Login Form | CodingLab</title> -->
-  
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
   </head>
   <body class="body">
   
@@ -16,38 +17,37 @@
         
         <form action="#" (submit)="registerPharmacien()">
         <div class="row">
-            <i>   <img  src="assets/email2.png" /> </i>
-            
+  <i ><mat-icon >person</mat-icon></i>
             <input type="text" id="name" name="name" class="form-control" placeholder="name" [(ngModel)]="name" required>
           </div>
           <div class="row">
-            <i>   <img  src="assets/email2.png" /> </i>
+            <i>   <mat-icon> email</mat-icon> </i>
             
             <input type="text" id="email" name="email" class="form-control" placeholder="email" [(ngModel)]="email" required>
           </div>
 
           <div class="row">
-            <i>   <img  src="assets/email2.png" /> </i>
+            <i>   <mat-icon> contact_mail</mat-icon> </i>
             
             <input type="text" id="cin" name="cin" class="form-control" placeholder="cin" [(ngModel)]="cin" required>
           </div>
 <div class="row">
-            <i>   <img  src="assets/email2.png" /> </i>
+            <i>   <mat-icon>places</mat-icon></i>
             
             <input type="text" id="adress" name="adress" class="form-control" placeholder="adress" [(ngModel)]="adress" required>
           </div>
           <div class="row">
-            <i>   <img  src="assets/email2.png" /> </i>
+            <i>   <mat-icon> local_hospital</mat-icon></i>
             
             <input type="text" id="listp" name="listp" class="form-control" placeholder="pharmacie" [(ngModel)]="listp" required>
           </div>
           <div class="row">
-            <i>   <img  src="assets/email2.png" /> </i>
+            <i>   <mat-icon> call</mat-icon></i>
             
             <input type="text" id="tel" name="tel" class="form-control" placeholder="tel" [(ngModel)]="tel" required>
           </div>
           <div class="row">
-        <i>   <img  src="assets/p.png" /> </i>
+        <i>  <mat-icon>lock</mat-icon></i>
             <input type="password" id="password"  class="form-control" name="password" [(ngModel)]="password" placeholder="password"  required>
           </div>
           <!--  <div class="pass"><a href="#">Forgot password?</a></div>!-->

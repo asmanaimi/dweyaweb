@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PharmacienService } from '../service/pharmacien.service';
-
+import {MatIconModule} from '@angular/material/icon'
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',

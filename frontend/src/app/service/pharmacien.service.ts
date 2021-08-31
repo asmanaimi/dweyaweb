@@ -9,7 +9,7 @@ import * as AppUtil from '../common/app.util';
 })
 export class PharmacienService {
 
-baseUri:string='http://192.168.1.7:3000';
+baseUri:string='http://172.16.20.35:3000';
 
 headers=new HttpHeaders().set('content-Type','applictaion/json');
 
@@ -71,6 +71,10 @@ deletetech(technicienID):Observable<any>{
 
 }
 
+affectordo(id, data): Observable<any> {
+  let url = `${this.baseUri}/pharmaciens/add/tech/${id}`;
+  return this.http.patch(url, {...data})
+}
 updatetech(id, data): Observable<any> {
   let url = `${this.baseUri}/pharmaciens/updatetech/${id}`;
   return this.http.put(url, {...data})
@@ -79,12 +83,16 @@ getListtech(query):Observable<any>{
   let url=`${this.baseUri}/pharmaciens/list`;
   return this.http.post(url,query).pipe(catchError(this.errorMgmt));
 }
-getListOrdo(query):Observable<any>{
+getListOrdo(query2):Observable<any>{
   let url=`${this.baseUri}/pharmaciens/listordo`;
-  return this.http.post(url,query).pipe(catchError(this.errorMgmt));
+  return this.http.post(url,query2).pipe(catchError(this.errorMgmt));
 }
 getOneTech(id){
   let url = `${this.baseUri}/pharmaciens/gettech`;
+  return this.http.post(url,{"_id":id});
+}
+getOneOrdo(id){
+  let url = `${this.baseUri}/pharmaciens/getordo`;
   return this.http.post(url,{"_id":id});
 }
 register(pharmacien):Observable<any>{

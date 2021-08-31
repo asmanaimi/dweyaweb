@@ -24,9 +24,10 @@
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color:rgba(44,216,137,1);
   color: white;
+  font-size: 100px; 
 }
 body {
     font-family: "Lato", sans-serif;
@@ -74,7 +75,7 @@ body {
     color: white;
     padding: 14px 20px;
   position: absolute;
-    margin: 8px 0;
+    margin: 400px 0;
     left: 1300px;
     border: none;
     border-radius: 4px;
@@ -82,18 +83,20 @@ body {
   }
   
   input[type=submit]:hover {
-    background-color: rgba(44,216,137,1);;
+    background-color: rgba(44,216,137,1);
+    
   }
 
   .h1{
 font-size: 50px;
 font-family: 'Times New Roman', Times, serif;
-text-align: center;
+text-align:center;
 
   }
 
   mat-toolbar {
     background: #14c572;   color: white;
+    
   }
   
   mat-sidenav {
@@ -107,6 +110,7 @@ text-align: center;
     text-align: center;
   }
   
+
   .content {
     height: calc(100vh - 98px);
     border-radius: 10px;
@@ -117,9 +121,10 @@ text-align: center;
     justify-content: center;
     align-items:initial;
   
-    font-size: 2rem;
-    color: lightgray;
+    font-size: 1.5rem;
+    color: rgb(104, 105, 104);
   }
+  
   
   mat-sidenav-container {
     height: calc(100vh - 65px);
@@ -146,16 +151,21 @@ text-align: center;
   .name {
     margin-top: 8px;
     font-weight: normal;
+
   }
   
   .designation {
     margin-top: 2px;
     font-size: 0.7rem;
-    color: lightgrey;
+    color: rgb(211, 211, 211);
+    
   }
   
   mat-divider {
     margin-top: 16px;
     margin-bottom: 16px;
     background-color: rgba(255, 255, 255, 0.5);
+  }
+  .btn{
+    position:absolute;
   }

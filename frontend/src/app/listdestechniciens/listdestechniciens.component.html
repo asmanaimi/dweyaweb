@@ -67,6 +67,8 @@
           <th scope="col"><h3>Numéro de cin </h3></th>
           <th scope="col"><h3>Numéro de télephone</h3></th>
           <th scope="col"><h3>Email</h3></th>
+        
+
            <th scope="col"><h3></h3></th>
 <th scope="col"><h3></h3></th>
         </tr>
@@ -80,15 +82,17 @@
            <td>{{technicien.cin}}</td>
             <td>{{technicien.tel}}</td>
              <td>{{technicien.email}}</td>
+         
+     
 
-         <td>
-<img  class="icondelete"src="assets/delete.svg" (click)=" deletetech(technicien._id)"   ></td>
+<td><img  class="icondelete"src="assets/delete.svg" (click)="deletetech(technicien._id)"   ></td>
 <td><img src="https://img.icons8.com/android/24/000000/edit.png" (click)="navigateToEdit(technicien._id)" />
           </td> 
         </tr>
       </tbody>
     </table>
         <input type="submit"  class="btn btn-primary" routerLink="/Ajouter technicien" value="Ajouter technicien">
+  <div ></div>
 
   </div>
 </div>

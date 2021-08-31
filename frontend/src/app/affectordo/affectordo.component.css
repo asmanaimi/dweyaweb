@@ -123,3 +123,26 @@ form .button input:hover{
 form .signup-link a:hover{
   text-decoration: underline;
 }
+.wrapper form .row select{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 35px;
+  border: 1px solid lightgrey;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .button select:hover{
+  background: #14c572;
+}
+.wrapper form .button select{
+  color: #fff;
+  font-size: 30px;
+  font-weight: 80px;
+  padding-left: 0px;
+  background: #14c572;    
+  border: 1px solid #14c572;
+ 
+  cursor: pointer;
+}

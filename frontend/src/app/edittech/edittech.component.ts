@@ -8,7 +8,7 @@ import { PharmacienService } from '../service/pharmacien.service';
   styleUrls: ['./edittech.component.css']
 })
 export class EdittechComponent implements OnInit {
-     name: String;
+      name: String;
       email:string;
       cin:string;
       tel:string;

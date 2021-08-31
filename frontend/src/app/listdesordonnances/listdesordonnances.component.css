@@ -21,12 +21,14 @@
 
 #customers tr:hover {background-color: #ddd;}
 
+
 #customers th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color:rgba(44,216,137,1);
   color: white;
+  font-size: 100px; 
 }
 body {
     font-family: "Lato", sans-serif;
@@ -79,6 +81,8 @@ body {
     border: none;
     border-radius: 4px;
     cursor: pointer;
+    text-align: center;
+
   }
   
   input[type=submit]:hover {
@@ -107,6 +111,7 @@ text-align: center;
     text-align: center;
   }
   
+  
   .content {
     height: calc(100vh - 98px);
     border-radius: 10px;
@@ -117,8 +122,8 @@ text-align: center;
     justify-content: center;
     align-items:initial;
   
-    font-size: 2rem;
-    color: lightgray;
+    font-size: 1.5rem;
+    color: rgb(104, 105, 104);
   }
   
   mat-sidenav-container {
@@ -150,7 +155,7 @@ text-align: center;
   
   .designation {
     margin-top: 2px;
-    font-size: 0.7rem;
+    font-size: 30rem;
     color: lightgrey;
   }
   
