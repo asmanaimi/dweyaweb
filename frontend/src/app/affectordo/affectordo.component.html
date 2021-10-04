@@ -1,6 +1,5 @@
 
-
-
+    
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
@@ -12,7 +11,55 @@
 
   </head>
   <body class="body">
-  
+ 
+
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <img class="avatar mat-elevation-z8" src="assets/dweya2.png" />
+
+     <!--  <h4 class="name">le nom du pharmacien</h4>
+        <p class="designation">Software Engineer</p>
+!-->
+        <mat-divider></mat-divider>
+
+     
+        <button mat-button class="menu-button">
+            <mat-icon >home</mat-icon>
+            <span routerLink="/Acceuil">Accueil</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon  >list</mat-icon>
+          <span   routerLink="/Listdestechniciens">Liste des techniciens</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>list</mat-icon>
+            <span routerLink="/Listdesordonnances">Liste des ordonnances</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>settings_power</mat-icon>
+            <span   (click) ="onLogOut()"  >Déconnecter</span>
+        </button>
+
+       
+
+    </mat-sidenav>
+   
     <div class="container">
   
       <div class="wrapper">
@@ -44,7 +91,8 @@
           </div>
           <div class="row">
         <i>  <mat-icon>list</mat-icon></i>
-<select size="1" class="form-control" [(ngModel)]="technicien" name="technicien">
+
+<select   size="1" class="form-control" [(ngModel)]="technicien" name="technicien">
                         <option *ngFor="let technicien of techniciens" [value]="technicien.email">{{technicien.email}}</option>
                 </select>      
                     </div>
@@ -55,7 +103,9 @@
         </form>
       </div>
      
-    </div>
+   </div>
+  
+</mat-sidenav-container>
 
   </body>
 </html>

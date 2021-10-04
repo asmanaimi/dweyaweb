@@ -8,7 +8,7 @@
     background-image: url("src/assets/d.jpg");
     overflow: hidden;
     background-repeat: no-repeat;
-	background-attachment: fixed;
+  background-attachment: fixed;
     background-size: cover;
   }
   
@@ -16,18 +16,16 @@
     background: silver;
   }
   .container{
-    width: 470px;
-
-    padding: 0px;
-    margin: 90px auto;
-   
+    width: 450px;
+  
+    padding-top: 0px;
+    margin: auto ;
+  
   }
   .wrapper{
     width: 100%;
     border-radius: 5px;
-   
     box-shadow: 0px 4px 10px 1px rgba(0,0,0,0.1);
-  
   }
   .image{
     background-color: transparent; 
@@ -68,8 +66,8 @@
     font-size: 16px;
     transition: all 0.3s ease;
   }
-  form .row input:focus{
-    background: seashell;   box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+  form .row input.ng-valid:focus{
+    background: rgb(220, 231, 229);   box-shadow: inset 0px 0px 2px 2px rgba(33, 219, 27, 0.699);
   }
   form .row input::placeholder{
     color: #999;
@@ -121,4 +119,13 @@
   form .signup-link a:hover{
     text-decoration: underline;
   }
+   
+ .error{
+  color:rgba(236, 27, 27, 0.699);
+
+}
+  
+  form .row input.ng-invalid.ng-touched {
+   border: 4px rgba(236, 27, 27, 0.699) solid;
+ }
   

@@ -1,4 +1,18 @@
 
+    
+<!DOCTYPE html>
+<!-- Created By CodingLab - www.codinglabweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Login Form | CodingLab</title> -->
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  </head>
+  <body class="body">
+ 
+
 <mat-toolbar class="mat-elevation-z8">
     <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
         <mat-icon *ngIf="!sidenav.opened">
@@ -21,89 +35,88 @@
 !-->
         <mat-divider></mat-divider>
 
+     
         <button mat-button class="menu-button">
-            <mat-icon>home</mat-icon>
+            <mat-icon >home</mat-icon>
             <span routerLink="/Acceuil">Accueil</span>
         </button>
         <button mat-button class="menu-button">
-            <mat-icon>list</mat-icon>
-          <span   routerLink="/Listdestechniciens">List des techniciens</span>
+            <mat-icon  >list</mat-icon>
+          <span   routerLink="/Listdestechniciens">Liste des techniciens</span>
         </button>
         <button mat-button class="menu-button">
             <mat-icon>list</mat-icon>
-            <span routerLink="/Listdesordonnances"  >List des ordonnaces</span>
+            <span routerLink="/Listdesordonnances">Liste des ordonnances</span>
         </button>
 
         <mat-divider></mat-divider>
 
         <button mat-button class="menu-button">
-            <mat-icon>power_settings_new</mat-icon>
+            <mat-icon>settings_power</mat-icon>
             <span   (click) ="onLogOut()"  >Déconnecter</span>
         </button>
 
-    </mat-sidenav>
-    <mat-sidenav-content>
-        <div class="content mat-elevation-z8">
-            Main content here!
-        </div>
-    </mat-sidenav-content>
-</mat-sidenav-container>
-<!DOCTYPE html>
-<!-- Created By CodingLab - www.codinglabweb.com -->
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Login Form | CodingLab</title> -->
-   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+       
 
-  </head>
-  <body class="body">
-  
+    </mat-sidenav>
+   
+        
     <div class="container">
   
       <div class="wrapper">
         <div class="title"><span> Ajouter technicien </span></div>
         
-        <form action="#" (submit)="addtech()">
+        <form action="#" #register="ngForm" (submit)="addtech()">
         <div class="row">
   <i ><mat-icon >person</mat-icon></i>
-    <input type="text" id="fname" name="name" placeholder="le nom du tech...." class="form-control"[(ngModel)]="name" name="name">
-          </div>
+<input type="text" id="name" name="name" class="form-control" placeholder="Entrez le nom du technicien"   #namecontrol="ngModel" [(ngModel)]="name" required>
+            <span *ngIf="namecontrol.invalid && namecontrol.touched"  class="error"> champs obligatoire</span>          </div>
           <div class="row">
             <i>   <mat-icon> email</mat-icon> </i>
             
-    <input type="text" id="lname" name="email" placeholder="aaaaaa@gmail.com" class="form-control"[(ngModel)]="email" name="email">
-          </div>
+ <input type="text" id="email" name="email" class="form-control" placeholder="Entrez l'email du technicien" [(ngModel)]="email"   #emailcontrol="ngModel" required pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
+                              <span *ngIf="emailcontrol.invalid && emailcontrol.touched && emailcontrol.errors?.required"  class="error">champs obligatoire</span>
+
+                     <span *ngIf="emailcontrol.touched && emailcontrol.errors?.pattern"  class="error"> Email n'est pas valide</span>          </div>
 
           <div class="row">
             <i>   <mat-icon> contact_mail</mat-icon> </i>
             
-    <input type="text" id="lname" name="cin" placeholder="xxxxxxxx" class="form-control"[(ngModel)]="cin" name="cin">
-          </div>
+  <input type="text" id="cin" name="cin" class="form-control" placeholder="Entrez le numéro du carte d'identité du technicien"  #cincontrol="ngModel" pattern="[0-9]{8}" [(ngModel)]="cin" required>
+      <span *ngIf="cincontrol.invalid && cincontrol.touched && cincontrol.errors?.required"  class="error">champs obligatoire</span>
+                     <span *ngIf="cincontrol.touched && cincontrol.errors?.pattern"  class="error">contenir seulement des chiffres et ne dépasse 8</span>          </div>
 <div class="row">
             <i>   <mat-icon>places</mat-icon></i>
             
-    <input type="text" id="lname" name="adress" placeholder="xx rue aaaaaa " class="form-control"[(ngModel)]="adress" name="adress">
+ <input type="text" id="adress" name="adress" class="form-control" placeholder="Entrez l'adresse personnel du technicien" #adresscontrol="ngModel" [(ngModel)]="adress" required>
+                       <span *ngIf="adresscontrol.invalid && adresscontrol.touched"  class="error">champs obligatoire</span>
           </div>
           
           <div class="row">
             <i>   <mat-icon> call</mat-icon></i>
             
-    <input type="text" id="lname" name="tel" placeholder="xxxxxxxx" class="form-control"[(ngModel)]="tel" name="tel">
-          </div>
+    <input type="text" id="tel" name="tel" class="form-control" placeholder="Entrez le numéro du téléphone du technicien" #telcontrol="ngModel" pattern="[0-9]{8}" [(ngModel)]="tel" required>
+ <span *ngIf="telcontrol.invalid && telcontrol.touched && telcontrol.errors?.required"  class="error">champs obligatoire</span>
+                     <span *ngIf="telcontrol.touched && telcontrol.errors?.pattern"  class="error">contenir seulement des chiffres et ne dépasse 8 </span>
+                   </div>
           <div class="row">
         <i>  <mat-icon>lock</mat-icon></i>
-    <input for="lname" type="password" id="lname" name="password" placeholder="xxxxxxxx" class="form-control"[(ngModel)]="password" name="password">
+<input type="password" id="password"  class="form-control" name="password" #passwordcontrol="ngModel" [(ngModel)]="password" placeholder="Entrez un mot de passe "  pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
+                              <span *ngIf="passwordcontrol.invalid && passwordcontrol.touched && passwordcontrol.errors?.required"  class="error">champs obligatoire</span>
+                     <span *ngIf="passwordcontrol.touched && passwordcontrol.errors?.pattern"  class="error">contenir au moins un chiffre et une lettre majuscule et minuscule, et au moins 8 caractères ou plus</span>
           </div>
           <!--  <div class="pass"><a href="#">Forgot password?</a></div>!-->
           <div class="row button">
             <input type="submit" value="Ajouter ">
+                        <span *ngIf="register.invalid" class="error">*Remplir tous les champs</span>
+
           </div>
         </form>
       </div>
      
     </div>
+  
+</mat-sidenav-container>
 
   </body>
 </html>

@@ -9,7 +9,8 @@ import * as AppUtil from '../common/app.util';
 })
 export class PharmacienService {
 
-baseUri:string='http://172.16.20.35:3000';
+
+baseUri:string='http://192.168.43.145:3000';
 
 headers=new HttpHeaders().set('content-Type','applictaion/json');
 
@@ -75,6 +76,10 @@ affectordo(id, data): Observable<any> {
   let url = `${this.baseUri}/pharmaciens/add/tech/${id}`;
   return this.http.patch(url, {...data})
 }
+affectstatus(email): Observable<any> {
+  let url = `${this.baseUri}/pharmaciens/add/techcount/${email}`;
+  return this.http.patch(url,email).pipe(catchError(this.errorMgmt));
+}
 updatetech(id, data): Observable<any> {
   let url = `${this.baseUri}/pharmaciens/updatetech/${id}`;
   return this.http.put(url, {...data})
@@ -122,5 +127,17 @@ getCurrentUser() {
 addtechnicien(technicien):Observable<any>{
   let url=`${this.baseUri}/pharmaciens/registertech`;
   return this.http.post(url,technicien).pipe(catchError(this.errorMgmt))
+}
+count(id, data): Observable<any> {
+  let url = `${this.baseUri}/techniciens/save/${id}`;
+  return this.http.patch(url, {...data})
+}
+getdisponibilite(technicien):Observable<any>{
+  let url=`${this.baseUri}/ordonnances/checkdispo/${technicien}`;
+  return this.http.get(url).pipe(catchError(this.errorMgmt));
+}
+getUserCount(technicien): Observable<any>  {
+  let url=`${this.baseUri}/techniciens/countordotech/${technicien}`;
+  return this.http.get(url).pipe(catchError(this.errorMgmt))
 }
   }

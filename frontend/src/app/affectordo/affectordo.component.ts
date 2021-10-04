@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { PharmacienService } from '../service/pharmacien.service';
 
@@ -14,6 +15,8 @@ export class AffectordoComponent implements OnInit {
       priseencharge:string;
       listp:string;
       technicien:string;
+      @ViewChild(MatSidenav)
+      sidenav!: MatSidenav;
   constructor(private _pharmacienService:PharmacienService, private route:Router) { }
 
   ngOnInit(): void {
@@ -45,7 +48,33 @@ export class AffectordoComponent implements OnInit {
 }).subscribe(data=>{
 
     })
+
+    this._pharmacienService.affectstatus(this.technicien).subscribe(
+      resp =>{        
+       console.log("check disponibilite");
+      // this.route.navigate(['/Listdestechniciens'])
+
+      }
+    )
     this.route.navigate(['/Listdesordonnances']);
 
+  }
+  getdispo(email){
+    
+    
+    this._pharmacienService.affectstatus(email).subscribe(
+      resp =>{        
+       console.log("check disponibilite");
+      // this.route.navigate(['/Listdestechniciens'])
+
+      }
+    )
+
+  
+  }
+  onLogOut(){
+    this._pharmacienService.logOut();
+   // this.route.navigate(['/login']);
+    return false;
   }
 }

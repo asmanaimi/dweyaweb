@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, UrlSegment } from '@angular/router';
+import { Component,ViewChild, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { PharmacienService } from '../service/pharmacien.service';
 
 @Component({
@@ -8,9 +9,14 @@ import { PharmacienService } from '../service/pharmacien.service';
   styleUrls: ['./listdestechniciens.component.css']
 })
 export class ListdestechniciensComponent implements OnInit {
+  @ViewChild(MatSidenav)
+sidenav!: MatSidenav;
+techCount: number;
   techniciens: any=[];
   ordonnances: any=[];
-  technicien:String;
+//  technicien:String;
+nbrordotraite:String;
+email:String;
 
   constructor(private _pharmacienService:PharmacienService, private route:Router) {   }
 
@@ -27,6 +33,7 @@ export class ListdestechniciensComponent implements OnInit {
     )
     console.log(JSON.stringify(this.techniciens));
 
+   // this._loadUsersCount();
 
   }
   
@@ -40,17 +47,52 @@ export class ListdestechniciensComponent implements OnInit {
     this._pharmacienService.deletetech(technicienId).subscribe(
       resp =>{        
        console.log("technicien deleted");
-       this.route.navigate(['/Listdestechniciens'])
+       this.route.navigate(['/Listdestechniciens']);
 
       }
+
     )
 
   }
 
   }
+
+
+
+  countordo(){
+    this._pharmacienService.count(this.route.url.slice(-24),{
+     
+'nbrordotraite':this.nbrordotraite
+}).subscribe(data=>{
+
+    })
+  //  this.route.navigate(['/Listdesordonnances']);
+
+  }
   
 
+  onLogOut(){
+    this._pharmacienService.logOut();
+   // this.route.navigate(['/login']);
+    return false;
+  }
 
+  counttech(technicien){
+   
+    
+    this._pharmacienService.getUserCount(technicien).subscribe(
+      resp =>{        
+      
+       this.techCount = resp.techCount;
+       console.log("technicien count added" +this.techCount);
 
+       this.route.navigate(['/Listdestechniciens']);
 
+      }
+
+    )
+
+  
+
+  }
 }

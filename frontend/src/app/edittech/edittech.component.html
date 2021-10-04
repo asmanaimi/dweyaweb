@@ -1,4 +1,5 @@
 
+    
 <!DOCTYPE html>
 <!-- Created By CodingLab - www.codinglabweb.com -->
 <html lang="en" dir="ltr">
@@ -10,11 +11,59 @@
 
   </head>
   <body class="body">
-  
+ 
+
+<mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button>
+    
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <img class="avatar mat-elevation-z8" src="assets/dweya2.png" />
+
+     <!--  <h4 class="name">le nom du pharmacien</h4>
+        <p class="designation">Software Engineer</p>
+!-->
+        <mat-divider></mat-divider>
+
+     
+        <button mat-button class="menu-button">
+            <mat-icon >home</mat-icon>
+            <span routerLink="/Acceuil">Accueil</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon  >list</mat-icon>
+          <span   routerLink="/Listdestechniciens">Liste des techniciens</span>
+        </button>
+        <button mat-button class="menu-button">
+            <mat-icon>list</mat-icon>
+            <span routerLink="/Listdesordonnances">Liste des ordonnances</span>
+        </button>
+
+        <mat-divider></mat-divider>
+
+        <button mat-button class="menu-button">
+            <mat-icon>settings_power</mat-icon>
+            <span   (click) ="onLogOut()"  >Déconnecter</span>
+        </button>
+
+       
+
+    </mat-sidenav>
+   
     <div class="container">
   
       <div class="wrapper">
-        <div class="title"><span> Modifier cet technicien </span></div>
+        <div class="title"><span> Modifier  technicien </span></div>
         
         <form action="#" (submit)="update()">
         <div class="row">
@@ -37,7 +86,12 @@
             
     <input type="text" id="lname" name="adress" placeholder="xx rue aaaaaa " class="form-control"[(ngModel)]="adress" name="adress">
           </div>
-          
+    <div class="row">
+            <i>   <mat-icon>places</mat-icon></i>
+            
+    <input type="text" id="lname" name="status" placeholder="disponibile ou non" class="form-control"[(ngModel)]="status" name="status">
+          </div>
+                
           <div class="row">
             <i>   <mat-icon> call</mat-icon></i>
             
@@ -55,6 +109,8 @@
       </div>
      
     </div>
+  
+</mat-sidenav-container>
 
   </body>
 </html>

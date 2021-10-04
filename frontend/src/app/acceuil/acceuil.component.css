@@ -4,12 +4,14 @@ mat-toolbar {
 
 mat-sidenav {
   margin: 16px;
-  width: 200px;
+  width: 240px;
   border-right: none;
   background: #14c572; 
-  color: white;
+  color:white
+  ;
   border-radius: 10px;
   padding: 16px;
+  align-items: center;
   text-align: center;
 }
 
@@ -24,11 +26,12 @@ mat-sidenav {
   align-items: center;
 
   font-size: 2rem;
-  color: lightgray;
+  color: #d3d3d3;
 }
 
 mat-sidenav-container {
   height: calc(100vh - 65px);
+  
 }
 
 .menu-button {
@@ -42,26 +45,24 @@ mat-sidenav-container {
 }
 
 .avatar {
-  margin-top: 16px;
+  margin-top: 50px;
   width: 100px;
   height: 100px;
   background-color: white;
-  border-radius: 30%;
+  border-radius: 15% 15% 15% 15%;
 }
 
 .name {
   margin-top: 8px;
   font-weight: normal;
+  align-items: center;
+
 }
 
-.designation {
-  margin-top: 2px;
-  font-size: 0.7rem;
-  color: lightgrey;
-}
+
 
 mat-divider {
-  margin-top: 16px;
-  margin-bottom: 16px;
+  margin-top: 45px;
+  margin-bottom: 45px;
   background-color: rgba(255, 255, 255, 0.5);
 }

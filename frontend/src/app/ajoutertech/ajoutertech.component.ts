@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component,ViewChild, OnInit } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { PharmacienService } from '../service/pharmacien.service';
 
@@ -9,6 +10,8 @@ import { PharmacienService } from '../service/pharmacien.service';
   styleUrls: ['./ajoutertech.component.css']
 })
 export class AjoutertechComponent implements OnInit {
+  @ViewChild(MatSidenav)
+  sidenav!: MatSidenav;
   name: string;
   email:string;
   cin:string;
@@ -26,6 +29,7 @@ export class AjoutertechComponent implements OnInit {
     console.log(JSON.stringify(this.owner));
   
   }
+ 
   onLogOut(){
     this._pharmacienService.logOut();
    // this.route.navigate(['/login']);
@@ -54,5 +58,6 @@ export class AjoutertechComponent implements OnInit {
            this.route.navigate(['/Listdestechniciens'])
              }
       );
+   
    }
 }

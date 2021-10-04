@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { PharmacienService } from '../service/pharmacien.service';
 
@@ -13,7 +14,10 @@ export class EdittechComponent implements OnInit {
       cin:string;
       tel:string;
       adress:string;
+      status:string;
       password:String;
+      @ViewChild(MatSidenav)
+      sidenav!: MatSidenav;
   constructor(private pharmacienService:PharmacienService, private router: Router) { }
 
   ngOnInit(): void {
@@ -24,6 +28,8 @@ export class EdittechComponent implements OnInit {
       this.tel=data['result']['tel'];
       this.adress=data['result']['adress'];
       this.password=data['result']['password'];
+      this.status=data['result']['status'];
+
     })
   }
   
@@ -35,11 +41,19 @@ export class EdittechComponent implements OnInit {
    'cin':this.cin,
    'tel':this.tel,
   'adress':this.adress,
-'password':this.password
+'password':this.password,
+'status':this.status
+
 }).subscribe(data=>{
 
     })
     this.router.navigate(['/Listdestechniciens']);
 
+  }
+  
+  onLogOut(){
+    this.pharmacienService.logOut();
+   // this.route.navigate(['/login']);
+    return false;
   }
 }
